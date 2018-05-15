@@ -1,0 +1,36 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Python template
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+
+# Translations
+*.mo
+
+# Django stuff:
+*.log
+*.sqlite3
+*.db
+
+.vagrant
+.idea
+.vscode
+pg_data/
+
+# Temp dir
+tmp/*
+
+# Virtualenv setttings
+.venv
+
+# Mac
+*.DS_Store
+
+ansible/main.retry
+
+media
+
+node_modules
+*/var/static
+webpack-stats.json

@@ -37,12 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'webpack_loader',
 
     # django cms required apps
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'guardian',
     'mptt',
+    'ckeditor',
     'pages',
 
     'main',
@@ -63,7 +65,7 @@ ROOT_URLCONF = 'cms.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates/'],
+        'DIRS': ['main/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,6 +121,13 @@ LANGUAGES = (
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'main', 'static'),
+    os.path.join(BASE_DIR, 'main', 'var', 'static'),
+)
 
 SITE_ID = 1
 
@@ -127,5 +136,40 @@ PAGE_LANGUAGES = LANGUAGES
 PAGE_DEFAULT_TEMPLATE = 'pages/base.html'
 
 PAGE_TEMPLATES = (
-    ('pages/test.html', 'test'),
+    ('pages/landing.html', 'Landing page'),
+    ('pages/news_item.html', 'News item'),
 )
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Undo', 'Redo',
+             '-', 'Bold', 'Italic', 'Underline',
+             '-', 'Link', 'Unlink', 'Anchor',
+             '-', 'Format',
+             '-', 'Maximize',
+             '-', 'Table',
+             '-', 'Image',
+             ],
+            ['Font', 'FontSize'],
+            ['TextColor', 'BGColor'],
+            [
+                'NumberedList',
+                'BulletedList',
+                '-',
+                'Outdent',
+                'Indent',
+                '-',
+                'JustifyLeft',
+                'JustifyCenter',
+                'JustifyRight',
+                'JustifyBlock'
+            ],
+            ['RemoveFormat', 'Source']
+        ]
+    },
+    'cms': {
+        'toolbar': 'Advanced'
+    }
+}

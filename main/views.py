@@ -3,3 +3,7 @@ from django.views.generic import TemplateView
 
 class IndexView(TemplateView):
     template_name = 'main/index.html'
+
+
+class NewsView(TemplateView):
+    template_name = 'news/base.html'
