@@ -23,6 +23,7 @@ tmp/*
 
 # Virtualenv setttings
 .venv
+venv
 
 # Mac
 *.DS_Store

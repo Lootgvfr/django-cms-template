@@ -6,17 +6,14 @@
   "license": "MIT",
   "author": "Artem Prudnikov",
   "scripts": {
-    "webpack": "webpack --progress --env.apiBaseUrl=${API_BASE_URL} --env.prod",
-    "webpack-dev": "webpack --progress --env.apiBaseUrl=${API_BASE_URL}",
-    "webpack-local": "webpack --progress",
-    "webpack-local-w": "webpack --progress -w"
+    "webpack": "webpack --progress --mode=production --env.apiBaseUrl=${API_BASE_URL} --env.prod",
+    "webpack-dev": "webpack --progress --mode=development --env.apiBaseUrl=${API_BASE_URL}",
+    "webpack-local": "webpack --progress --mode=development",
+    "webpack-local-w": "webpack --progress --mode=development -w"
   },
   "dependencies": {
     "bootstrap": "^4.1.1",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.3.1",
-    "jquery.easing": "^1.4.1",
-    "simple-line-icons": "^2.4.1"
+    "jquery": "^3.3.1"
   },
   "devDependencies": {
     "css-loader": "^0.28.11",

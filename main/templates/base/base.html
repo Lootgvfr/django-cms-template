@@ -5,56 +5,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Base title{% endblock %}</title>
+    <title>{% block title %}{% trans 'Школа танців - Sonat' %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
 </head>
-<body>
+<body data-spy="scroll" data-target="#navbar" data-offset="30">
 {% render_bundle 'baseStyle' %}
 
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+<div class="nav-menu fixed-top">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">
-            {% trans 'Школа танців' %}
-        </a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-            Menu
-            <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#download">{% trans 'Контакти' %}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#features">{% trans 'Про нас' %}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger"
-                       href="{% url 'main:news' %}">{% trans 'Новини' %}</a>
-                </li>
-            </ul>
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-dark navbar-expand-lg">
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="img-fluid"
+                                                                   alt="logo"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span
+                            class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link active" href="#home">HOME <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="#features">FEATURES</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#gallery">GALLERY</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#pricing">PRICING</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+                            <li class="nav-item"><a href="#"
+                                                    class="btn btn-outline-light my-3 my-sm-0 ml-lg-3">Download</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </div>
     </div>
-</nav>
+</div>
 
 {% block content %}{% endblock %}
 
-<footer>
-    <div class="container">
-        <p>&copy; Your Website 2018. All Rights Reserved.</p>
-        <ul class="list-inline">
-            <li class="list-inline-item">
-                <a href="#">Privacy</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#">Terms</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#">FAQ</a>
-            </li>
-        </ul>
-    </div>
+<footer class="my-5 text-center">
+    <p class="mb-2">
+        <small>COPYRIGHT © 2017. ALL RIGHTS RESERVED. MOBAPP TEMPLATE BY <a href="https://colorlib.com">COLORLIB</a>
+        </small>
+    </p>
+
+    <small>
+        <a href="#" class="m-2">PRESS</a>
+        <a href="#" class="m-2">TERMS</a>
+        <a href="#" class="m-2">PRIVACY</a>
+    </small>
 </footer>
 
 {% render_bundle 'base' %}

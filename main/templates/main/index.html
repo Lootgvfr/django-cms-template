@@ -1,101 +1,62 @@
 {% extends 'base/base.html' %}
 {% load static i18n pages_tags %}
 
-{% block title %}{% trans 'Школа танців' %}{% endblock %}
-
 {% block content %}
     {% get_page "landing_test" as CMS_landing %}
 
 
-    <header class="masthead">
-        <div class="container h-100">
-            <div class="row h-100">
-                <div class="col-lg-7 my-auto">
-                    <div class="header-content mx-auto">
-                        <h1 class="mb-5">{% show_content CMS_landing "main_text" %}</h1>
-                        <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Start Now for Free!</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 my-auto">
-                    <img src="{% static 'base/img/balerina.jpg' %}"/>
-                </div>
-            </div>
+    <header class="bg-gradient" id="home">
+        <div class="container mt-5">
+            <h1>Mobile App Landing Page Template</h1>
+            <p class="tagline">The one and only solution for any kind of mobila app landing needs. Just change the
+                screenshots and texts and you are good to go. </p>
         </div>
     </header>
 
-    <section class="download bg-primary text-center" id="download">
+    <div class="section light-bg" id="features">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <h2 class="section-heading">Discover what all the buzz is about!</h2>
-                    <p>Our app is available on any mobile device! Download now to get started!</p>
-                    <div class="badges">
-                        <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
-                        <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-heading text-center">
-                <h2>Unlimited Features, Unlimited Fun</h2>
-                <p class="text-muted">Check out what you can do with this app theme!</p>
-                <hr>
+            <div class="section-title">
+                <small>HIGHLIGHTS</small>
+                <h3>Features you love</h3>
             </div>
             <div class="row">
-                <div class="col-lg-4 my-auto">
-                    <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device">
-                                <div class="screen">
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="img/demo-screen-1.jpg" class="img-fluid" alt="">
-                                </div>
-                                <div class="button">
-                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                <div class="col-12 col-lg-4">
+                    <div class="card features">
+                        <div class="card-body">
+                            <div class="media">
+                                <span class="ti-face-smile gradient-fill ti-3x mr-3"></span>
+                                <div class="media-body">
+                                    <h4 class="card-title">Simple</h4>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Integer rutrum, urna eu pellentesque </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 my-auto">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="feature-item">
-                                    <i class="icon-screen-smartphone text-primary"></i>
-                                    <h3>Device Mockups</h3>
-                                    <p class="text-muted">Ready to use HTML/CSS device mockups, no Photoshop
-                                        required!</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="feature-item">
-                                    <i class="icon-camera text-primary"></i>
-                                    <h3>Flexible Use</h3>
-                                    <p class="text-muted">Put an image, video, animation, or anything else in the
-                                        screen!</p>
+                <div class="col-12 col-lg-4">
+                    <div class="card features">
+                        <div class="card-body">
+                            <div class="media">
+                                <span class="ti-settings gradient-fill ti-3x mr-3"></span>
+                                <div class="media-body">
+                                    <h4 class="card-title">Customize</h4>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Integer rutrum, urna eu pellentesque </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="feature-item">
-                                    <i class="icon-present text-primary"></i>
-                                    <h3>Free to Use</h3>
-                                    <p class="text-muted">As always, this theme is free to download and use for any
-                                        purpose!</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="feature-item">
-                                    <i class="icon-lock-open text-primary"></i>
-                                    <h3>Open Source</h3>
-                                    <p class="text-muted">Since this theme is MIT licensed, you can use it
-                                        commercially!</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="card features">
+                        <div class="card-body">
+                            <div class="media">
+                                <span class="ti-lock gradient-fill ti-3x mr-3"></span>
+                                <div class="media-body">
+                                    <h4 class="card-title">Secure</h4>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Integer rutrum, urna eu pellentesque </p>
                                 </div>
                             </div>
                         </div>
@@ -103,40 +64,61 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="cta">
-        <div class="cta-content">
-            <div class="container">
-                <h2>Stop waiting.<br>Start building.</h2>
-                <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
-            </div>
-        </div>
-        <div class="overlay"></div>
-    </section>
-
-    <section class="contact bg-primary" id="contact">
+    <div class="section">
         <div class="container">
-            <h2>We
-                <i class="fa fa-heart"></i>
-                new friends!</h2>
-            <ul class="list-inline list-social">
-                <li class="list-inline-item social-twitter">
-                    <a href="#">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item social-facebook">
-                    <a href="#">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item social-google-plus">
-                    <a href="#">
-                        <i class="fa fa-google-plus"></i>
-                    </a>
-                </li>
-            </ul>
+            <div class="section-title">
+                <h3>{% trans 'Про нас' %}</h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md">
+                    <p>{% lorem %}</p>
+                    <p>{% lorem %}</p>
+                </div>
+                <div class="col-auto">
+                    <img src="{% static 'base/images/graphic.png' %}" alt="graphic"
+                         class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <h3>What our Customers Says</h3>
+            </div>
+            <div class="testimonials owl-carousel">
+                <div class="testimonials-single">
+                    <img src="images/client.png" alt="client" class="client-img">
+                    <blockquote class="blockquote">Uniquely streamline highly efficient scenarios and 24/7 initiatives.
+                        Conveniently embrace multifunctional ideas through proactive customer service. Distinctively
+                        conceptualize 2.0 intellectual capital via user-centric partnerships.
+                    </blockquote>
+                    <h5 class="mt-4 mb-2">Crystal Gordon</h5>
+                    <p class="text-primary">United States</p>
+                </div>
+                <div class="testimonials-single">
+                    <img src="images/client.png" alt="client" class="client-img">
+                    <blockquote class="blockquote">Uniquely streamline highly efficient scenarios and 24/7 initiatives.
+                        Conveniently embrace multifunctional ideas through proactive customer service. Distinctively
+                        conceptualize 2.0 intellectual capital via user-centric partnerships.
+                    </blockquote>
+                    <h5 class="mt-4 mb-2">Crystal Gordon</h5>
+                    <p class="text-primary">United States</p>
+                </div>
+                <div class="testimonials-single">
+                    <img src="images/client.png" alt="client" class="client-img">
+                    <blockquote class="blockquote">Uniquely streamline highly efficient scenarios and 24/7 initiatives.
+                        Conveniently embrace multifunctional ideas through proactive customer service. Distinctively
+                        conceptualize 2.0 intellectual capital via user-centric partnerships.
+                    </blockquote>
+                    <h5 class="mt-4 mb-2">Crystal Gordon</h5>
+                    <p class="text-primary">United States</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
