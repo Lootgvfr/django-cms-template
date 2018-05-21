@@ -1,0 +1,74 @@
+
+.main-banner {
+  position: relative;
+  min-height: 500px;
+
+  .bg-absolute {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    opacity: .5;
+  }
+
+  .main-banner-content {
+    position: relative;
+    padding: 30px;
+    display: flex;
+  }
+
+  .main-banner-logo-container {
+    padding: 100px;
+    flex: 30%;
+  }
+
+  .main-banner-logo-wrapper {
+    padding: 30px;
+
+    background: white;
+    border-radius: 50%;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .main-banner-text {
+    padding: 30px;
+    flex: 50%;
+
+    border-radius: 10px;
+  }
+}
+
+.waves-container {
+  position: relative;
+  height: 0;
+  overflow: visible;
+
+  .waves-image {
+    position: absolute;
+    top: -140px;
+    left: 0;
+    right: 0;
+  }
+
+  .waves-content {
+    position: absolute;
+    top: -60px;
+    left: 50px;
+    right: 50px;
+
+    color: white;
+    text-align: center;
+
+    h1, h3 {
+      display: inline;
+      color: white;
+    vertical-align: top;
+    }
+  }
+}

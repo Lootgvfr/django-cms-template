@@ -5,58 +5,68 @@
     {% get_page "landing_test" as CMS_landing %}
 
 
-    <header class="bg-gradient" id="home">
-        <div class="container mt-5">
-            <h1>Mobile App Landing Page Template</h1>
-            <p class="tagline">The one and only solution for any kind of mobila app landing needs. Just change the
-                screenshots and texts and you are good to go. </p>
+    <header id="home" class="main-banner"
+            style="background-image: url({% static 'base/images/hall.jpeg' %})">
+        <div class="bg-absolute bg-gradient"></div>
+        <div class="main-banner-content">
+
         </div>
     </header>
+
+    <div class="waves-container">
+        <img class="waves-image" src="{% static 'base/images/waves.svg' %}">
+        <div class="waves-content">
+            <h3>{% trans 'Хореографічна школа' %}</h3>
+            <h1>{% trans '"Sonat"' %}</h1>
+        </div>
+    </div>
 
     <div class="section light-bg" id="features">
         <div class="container">
             <div class="section-title">
-                <small>HIGHLIGHTS</small>
-                <h3>Features you love</h3>
+                <h3>{% trans 'Чому танці - це круто?' %}</h3>
             </div>
             <div class="row">
                 <div class="col-12 col-lg-4">
-                    <div class="card features">
+                    <div class="card features h-100">
                         <div class="card-body">
                             <div class="media">
                                 <span class="ti-face-smile gradient-fill ti-3x mr-3"></span>
                                 <div class="media-body">
-                                    <h4 class="card-title">Simple</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Integer rutrum, urna eu pellentesque </p>
+                                    <h4 class="card-title">{% trans 'Ємоційно' %}</h4>
+                                    <p class="card-text">
+                                        {% trans 'З давніх часів танець був найчутливішою формою вираження настрою, бажань, почуттів, або навіть слів.' %}
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-4">
-                    <div class="card features">
+                    <div class="card features h-100">
                         <div class="card-body">
                             <div class="media">
                                 <span class="ti-settings gradient-fill ti-3x mr-3"></span>
                                 <div class="media-body">
-                                    <h4 class="card-title">Customize</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Integer rutrum, urna eu pellentesque </p>
+                                    <h4 class="card-title">{% trans 'Зручно' %}</h4>
+                                    <p class="card-text">
+                                        {% trans 'Поки діти будуть робити важливі кроки до пізнання цього виду мистецтва, батьки зможуть зачекати їх, а заразом і відпочити у великому та зручному холі.' %}
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-4">
-                    <div class="card features">
+                    <div class="card features h-100">
                         <div class="card-body">
                             <div class="media">
-                                <span class="ti-lock gradient-fill ti-3x mr-3"></span>
+                                <span class="ti-thumb-up gradient-fill ti-3x mr-3"></span>
                                 <div class="media-body">
-                                    <h4 class="card-title">Secure</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Integer rutrum, urna eu pellentesque </p>
+                                    <h4 class="card-title">{% trans 'Корисно' %}</h4>
+                                    <p class="card-text">
+                                        {% trans 'Танець не лише дає гарний настрій, а й розвиває та зміцнює тіло.' %}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -84,38 +94,32 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section light-bg">
         <div class="container">
             <div class="section-title">
-                <h3>What our Customers Says</h3>
+                <h3>{% trans 'Відгуки' %}</h3>
             </div>
             <div class="testimonials owl-carousel">
                 <div class="testimonials-single">
-                    <img src="images/client.png" alt="client" class="client-img">
                     <blockquote class="blockquote">Uniquely streamline highly efficient scenarios and 24/7 initiatives.
                         Conveniently embrace multifunctional ideas through proactive customer service. Distinctively
                         conceptualize 2.0 intellectual capital via user-centric partnerships.
                     </blockquote>
                     <h5 class="mt-4 mb-2">Crystal Gordon</h5>
-                    <p class="text-primary">United States</p>
                 </div>
                 <div class="testimonials-single">
-                    <img src="images/client.png" alt="client" class="client-img">
                     <blockquote class="blockquote">Uniquely streamline highly efficient scenarios and 24/7 initiatives.
                         Conveniently embrace multifunctional ideas through proactive customer service. Distinctively
                         conceptualize 2.0 intellectual capital via user-centric partnerships.
                     </blockquote>
                     <h5 class="mt-4 mb-2">Crystal Gordon</h5>
-                    <p class="text-primary">United States</p>
                 </div>
                 <div class="testimonials-single">
-                    <img src="images/client.png" alt="client" class="client-img">
                     <blockquote class="blockquote">Uniquely streamline highly efficient scenarios and 24/7 initiatives.
                         Conveniently embrace multifunctional ideas through proactive customer service. Distinctively
                         conceptualize 2.0 intellectual capital via user-centric partnerships.
                     </blockquote>
                     <h5 class="mt-4 mb-2">Crystal Gordon</h5>
-                    <p class="text-primary">United States</p>
                 </div>
             </div>
         </div>

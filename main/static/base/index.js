@@ -1,4 +1,4 @@
-import jquery from 'jquery';
-window.$ = window.jQuery = jquery;
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import './js/script'
+window.$ = window.jQuery = require('jquery');
+require('bootstrap/dist/js/bootstrap.bundle.min');
+require('owl.carousel/dist/owl.carousel.min');
+require('./js/script');
