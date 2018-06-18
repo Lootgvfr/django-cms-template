@@ -138,6 +138,7 @@ PAGE_DEFAULT_TEMPLATE = 'pages/base.html'
 PAGE_TEMPLATES = (
     ('pages/landing.html', 'Landing page'),
     ('pages/news_item.html', 'News item'),
+    ('pages/price.html', 'Price item'),
 )
 
 CKEDITOR_CONFIGS = {

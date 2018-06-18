@@ -1,0 +1,9 @@
+{% extends 'pages/base.html' %}
+{% load pages_tags ckeditor_placeholder i18n %}
+
+{% block content %}
+    {% placeholder "name" %}
+    {% placeholder "price" %}
+    {% placeholder "selected" %}
+    {% ckeditor_placeholder "description" with ckeditor:cms %}
+{% endblock %}
