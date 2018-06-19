@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+{% load pages_tags ckeditor_placeholder static i18n %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="section-title">
+            <h3>{{ current_page.title }}</h3>
+        </div>
+        {% ckeditor_placeholder "content" with ckeditor:cms %}
+    </div>
+{% endblock %}

@@ -137,6 +137,7 @@ PAGE_DEFAULT_TEMPLATE = 'pages/base.html'
 
 PAGE_TEMPLATES = (
     ('pages/landing.html', 'Landing page'),
+    ('pages/default.html', 'Default page'),
     ('pages/news_item.html', 'News item'),
     ('pages/price.html', 'Price item'),
 )

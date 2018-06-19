@@ -5,27 +5,25 @@
 {% block content %}
     {% get_page "prices" as prices %}
     <div class="container">
-        <div class="section" id="pricing">
-            <div class="container">
-                <div class="section-title">
-                    <h3>{% trans 'Ціни' %}</h3>
-                </div>
+        <div class="container">
+            <div class="section-title">
+                <h3>{% trans 'Ціни' %}</h3>
+            </div>
 
-                <div class="card-deck">
-                    {% for item in prices.published_children %}
-                        {% get_content item 'selected' as item__selected %}
-                        <div class="card pricing {% if item__selected %}popular{% endif %}">
-                            <div class="card-head">
-                                <span class="text-primary">{% show_content item "name" %}</span>
-                                <span class="price">{% show_content item "price" %} грн<sub>/місяць</sub></span>
-                            </div>
-                            <div class="px-4">{% show_content item "description" %}</div>
-                            <div class="card-body">
-                                <a href="#" class="btn btn-primary btn-lg btn-block">{% trans 'Записатись' %}</a>
-                            </div>
+            <div class="card-deck">
+                {% for item in prices.published_children %}
+                    {% get_content item 'selected' as item__selected %}
+                    <div class="card pricing {% if item__selected %}popular{% endif %}">
+                        <div class="card-head">
+                            <span class="text-primary">{% show_content item "name" %}</span>
+                            <span class="price">{% show_content item "price" %} грн<sub>/місяць</sub></span>
                         </div>
-                    {% endfor %}
-                </div>
+                        <div class="px-4">{% show_content item "description" %}</div>
+                        <div class="card-body">
+                            <a href="#" class="btn btn-primary btn-lg btn-block">{% trans 'Записатись' %}</a>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>

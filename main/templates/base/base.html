@@ -1,5 +1,9 @@
-{% load static i18n %}
+{% load static i18n pages_tags %}
 {% load render_bundle from webpack_loader %}
+
+{% get_page "schedule" as schedule %}
+{% get_page "contacts" as contacts %}
+{% get_page "faq" as faq %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,24 +16,44 @@
 {% render_bundle 'baseStyle' %}
 {% block style %}{% endblock %}
 
+
+<div class="waves-container">
+    <img class="waves-image" src="{% static 'base/images/waves.svg' %}">
+    <div class="waves-content">
+    </div>
+</div>
+
 <div class="nav-menu fixed-top">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <nav class="navbar {% if navbar_dark %}navbar-dark{% else %}navbar-inverse{% endif %} navbar-expand-lg">
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="img-fluid"
-                                                                   alt="logo"></a>
+                <nav class="navbar navbar-dark navbar-expand-lg">
+                    <a class="navbar-brand" href="{% url 'main:index' %}">
+                        <img src="images/logo.png" class="img-fluid">
+                    </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
                             aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span
                             class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbar">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item"><a class="nav-link" href="{% url 'main:index' %}">{% trans 'Головна' %}</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'main:pricing' %}">{% trans 'Ціни' %}</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">{% trans 'Розклад' %}</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">{% trans 'Новини' %}</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">{% trans 'Контакти' %}</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">{% trans 'Часті запитання' %}</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'main:index' %}">{% trans 'Головна' %}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'main:pricing' %}">{% trans 'Ціни' %}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% show_absolute_url schedule %}">{% trans 'Розклад' %}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">{% trans 'Новини' %}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% show_absolute_url contacts %}">{% trans 'Контакти' %}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% show_absolute_url faq %}">{% trans 'Часті запитання' %}</a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -38,7 +62,9 @@
     </div>
 </div>
 
-{% block content %}{% endblock %}
+<div class="content-base">
+    {% block content %}{% endblock %}
+</div>
 
 <footer class="my-5 text-center">
     <p class="mb-2">
