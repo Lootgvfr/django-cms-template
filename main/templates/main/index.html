@@ -2,11 +2,12 @@
 {% load static i18n pages_tags %}
 
 {% block content %}
-    {% get_page "landing_test" as CMS_landing %}
+    {% get_page "landing" as CMS_landing %}
+    {% get_page "reviews" as CMS_reviews %}
 
 
     <header id="home" class="main-banner"
-            style="background-image: url({% static 'base/images/hall.jpeg' %})">
+            style="background-image: url({% show_content CMS_landing "main_image" %})">
         <div class="bg-absolute bg-gradient"></div>
         <div class="main-banner-content">
 
@@ -79,12 +80,9 @@
                 <h3>{% trans 'Про нас' %}</h3>
             </div>
             <div class="row">
-                <div class="col-sm-12 col-md">
-                    <p>{% lorem %}</p>
-                    <p>{% lorem %}</p>
-                </div>
+                <div class="col-sm-12 col-md">{% show_content CMS_landing "about_us" %}</div>
                 <div class="col-auto">
-                    <img src="{% static 'base/images/graphic.png' %}" alt="graphic"
+                    <img src="{% show_content CMS_landing "about_us_image" %}"
                          class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
                 </div>
             </div>
@@ -97,27 +95,12 @@
                 <h3>{% trans 'Відгуки' %}</h3>
             </div>
             <div class="testimonials owl-carousel">
-                <div class="testimonials-single">
-                    <blockquote class="blockquote">Uniquely streamline highly efficient scenarios and 24/7 initiatives.
-                        Conveniently embrace multifunctional ideas through proactive customer service. Distinctively
-                        conceptualize 2.0 intellectual capital via user-centric partnerships.
-                    </blockquote>
-                    <h5 class="mt-4 mb-2">Crystal Gordon</h5>
-                </div>
-                <div class="testimonials-single">
-                    <blockquote class="blockquote">Uniquely streamline highly efficient scenarios and 24/7 initiatives.
-                        Conveniently embrace multifunctional ideas through proactive customer service. Distinctively
-                        conceptualize 2.0 intellectual capital via user-centric partnerships.
-                    </blockquote>
-                    <h5 class="mt-4 mb-2">Crystal Gordon</h5>
-                </div>
-                <div class="testimonials-single">
-                    <blockquote class="blockquote">Uniquely streamline highly efficient scenarios and 24/7 initiatives.
-                        Conveniently embrace multifunctional ideas through proactive customer service. Distinctively
-                        conceptualize 2.0 intellectual capital via user-centric partnerships.
-                    </blockquote>
-                    <h5 class="mt-4 mb-2">Crystal Gordon</h5>
-                </div>
+                {% for review in CMS_reviews.published_children %}
+                    <div class="testimonials-single">
+                        <blockquote class="blockquote">{% show_content review "text" %}</blockquote>
+                        <h5 class="mt-4 mb-2">{% show_content review "author" %}</h5>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>

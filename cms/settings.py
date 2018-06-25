@@ -140,6 +140,7 @@ PAGE_TEMPLATES = (
     ('pages/default.html', 'Default page'),
     ('pages/news_item.html', 'News item'),
     ('pages/price.html', 'Price item'),
+    ('pages/review.html', 'Review item'),
 )
 
 CKEDITOR_CONFIGS = {

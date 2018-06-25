@@ -3,4 +3,7 @@
 
 {% block content %}
     {% ckeditor_placeholder "main_text" with ckeditor:cms %}
+    {% imageplaceholder "main_image" %}
+    {% ckeditor_placeholder "about_us" with ckeditor:cms %}
+    {% imageplaceholder "about_us_image" %}
 {% endblock %}
