@@ -8,5 +8,6 @@
             <h3>{{ current_page.title }}</h3>
         </div>
         {% ckeditor_placeholder "content" with ckeditor:cms %}
+        {% imageplaceholder "image" as image %}
     </div>
 {% endblock %}

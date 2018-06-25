@@ -5,17 +5,21 @@
 
 {% block content %}
     {% get_page "news" as news_page %}
-    <div class="container">
-        <h2 class="text-center">Новини</h2>
-        <br>
-        <div class="row">
-            {% for news_item in news_page.published_children %}
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{% show_content news_item "image" lang %}" alt="Card image cap">
+    <div class="container-fluid">
+        <div class="section-title">
+            <h3>Новини</h3>
+        </div>
+
+        <div class="row justify-content-center">
+            {% for article in news_page.published_children %}
+                <div class="card m-2" style="width: 18rem;">
+                    <img class="card-img-top" src="{% show_content article "image" lang %}">
                     <div class="card-body">
-                        <h5 class="card-title">{% show_content news_item "heading" lang %}</h5>
-                        <p class="card-text">{% show_content news_item "preview" lang %}</p>
-                        <a href="{% show_absolute_url news_item %}">читати далі >></a>
+                        {% get_content article "heading" lang as article_heading %}
+                        {% get_content article "preview" lang as article_preview %}
+                        <h6>{{ article_heading|truncatechars:100 }}</h6>
+                        <p class="card-text">{{ article_preview|truncatechars:150 }}</p>
+                        <a href="{% show_absolute_url article %}">читати далі >></a>
                     </div>
                 </div>
             {% endfor %}

@@ -71,17 +71,27 @@
     color: white;
     text-align: center;
   }
+
+  &.waves-container__main {
+    .waves-image {
+      margin-top: -100px;
+    }
+  }
 }
 
 .sonat-navbar-brand {
   width: 120px;
   height: 120px;
   border-radius: 60px;
-  background: mediumaquamarine;
+  background: #fff;
   position: absolute;
   padding: 20px;
 }
 
 p {
   color: unset;
+}
+
+h6 {
+  color: #633991;
 }
