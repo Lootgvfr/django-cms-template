@@ -13,7 +13,7 @@
         <div class="row justify-content-center">
             {% for article in news_page.published_children %}
                 <div class="card m-2" style="width: 18rem;">
-                    <img class="card-img-top" src="{% show_content article "image" lang %}">
+                    <img class="card-img-top" src="{% get_media_prefix %}{% show_content article "image" lang %}">
                     <div class="card-body">
                         {% get_content article "heading" lang as article_heading %}
                         {% get_content article "preview" lang as article_preview %}
