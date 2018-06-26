@@ -2,6 +2,7 @@
 {% load pages_tags ckeditor_placeholder i18n %}
 
 {% block content %}
+    {% imageplaceholder "logo" %}
     {% ckeditor_placeholder "main_text" with ckeditor:cms %}
     {% imageplaceholder "main_image" %}
     {% ckeditor_placeholder "about_us" with ckeditor:cms %}

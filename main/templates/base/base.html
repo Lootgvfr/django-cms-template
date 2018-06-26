@@ -1,6 +1,7 @@
 {% load static i18n pages_tags %}
 {% load render_bundle from webpack_loader %}
 
+{% get_page "landing" as CMS_landing %}
 {% get_page "schedule" as schedule %}
 {% get_page "contacts" as contacts %}
 {% get_page "faq" as faq %}
@@ -25,40 +26,36 @@
 
 <div class="nav-menu fixed-top">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar navbar-dark navbar-expand-lg">
-                    <a class="navbar-brand" href="{% url 'main:index' %}">
-                        <img src="images/logo.png" class="img-fluid">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
-                            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span
-                            class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbar">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'main:index' %}">{% trans 'Головна' %}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'main:pricing' %}">{% trans 'Ціни' %}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% show_absolute_url schedule %}">{% trans 'Розклад' %}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'main:news' %}">{% trans 'Новини' %}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% show_absolute_url contacts %}">{% trans 'Контакти' %}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% show_absolute_url faq %}">{% trans 'Часті запитання' %}</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+        <nav class="navbar navbar-dark navbar-expand-lg">
+            <a class="navbar-brand sonat-navbar-brand" href="{% url 'main:index' %}">
+                <img src="{% get_media_prefix %}{% show_content CMS_landing "logo" %}" class="img-fluid">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'main:index' %}">{% trans 'Головна' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'main:pricing' %}">{% trans 'Ціни' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% show_absolute_url schedule %}">{% trans 'Розклад' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'main:news' %}">{% trans 'Новини' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% show_absolute_url contacts %}">{% trans 'Контакти' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% show_absolute_url faq %}">{% trans 'Часті запитання' %}</a>
+                    </li>
+                </ul>
             </div>
-        </div>
+        </nav>
     </div>
 </div>
 

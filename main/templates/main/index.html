@@ -7,7 +7,7 @@
 
 
     <header id="home" class="main-banner"
-            style="background-image: url({% show_content CMS_landing "main_image" %})">
+            style="background-image: url({% get_media_prefix %}{% show_content CMS_landing "main_image" %})">
         <div class="bg-absolute bg-gradient"></div>
         <div class="main-banner-content">
 
@@ -82,8 +82,9 @@
             <div class="row">
                 <div class="col-sm-12 col-md">{% show_content CMS_landing "about_us" %}</div>
                 <div class="col-auto">
-                    <img src="{% show_content CMS_landing "about_us_image" %}"
-                         class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
+                    <img src="{% get_media_prefix %}{% show_content CMS_landing "about_us_image" %}"
+                         class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0"
+                         style="max-width: 300px; max-height: 300px">
                 </div>
             </div>
         </div>

@@ -3,11 +3,17 @@
 
 
 {% block content %}
+    {% imageplaceholder "image" as image %}
+
     <div class="container">
         <div class="section-title">
             <h3>{{ current_page.title }}</h3>
         </div>
         {% ckeditor_placeholder "content" with ckeditor:cms %}
-        {% imageplaceholder "image" as image %}
+        {% if image %}
+            <div class="text-center">
+                <img src="{% get_media_prefix %}{{ image }}" style="max-width: 100%">
+            </div>
+        {% endif %}
     </div>
 {% endblock %}
