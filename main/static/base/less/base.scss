@@ -85,7 +85,7 @@
   border-radius: 60px;
   background: #fff;
   position: absolute;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,4 +98,10 @@ p {
 
 h6 {
   color: #633991;
+}
+
+.navbar-nav-sonat li a {
+  font-size: 18px !important;
+  color: white !important;
+
 }

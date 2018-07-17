@@ -1,10 +1,13 @@
+{% extends 'base/base.html' %}
 {% load pages_tags ckeditor_placeholder static i18n %}
 
-{% block pages_content %}
-    {% imageplaceholder "image" as image %}
-    {% placeholder "heading" as heading %}
-    {% placeholder "preview" with Textarea as preview %}
-    {% placeholder "date" %}
+{% block content %}
+    <div class="container">
+        {% imageplaceholder "image" as image %}
+        {% placeholder "heading" as heading %}
+        {% placeholder "preview" with Textarea as preview %}
+        {% placeholder "date" %}
 
-    {% ckeditor_placeholder "content" with ckeditor:cms %}
+        {% ckeditor_placeholder "content" with ckeditor:cms %}
+    </div>
 {% endblock %}
