@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Gabriela-Regular';
+  src: url('/static/base/fonts/Gabriela-Regular.ttf');
+}
+
+body {
+  font-family: 'Gabriela-Regular', sans-serif;
+}
+
 .content-base {
   padding-top: 160px;
 }
@@ -62,6 +71,13 @@
     margin-top: -66px;
   }
 
+  .waves-content {
+    position: absolute;
+    width: 100%;
+    top: -80px;
+    left: 0;
+  }
+
   .waves-logo {
     position: absolute;
     left: 50px;
@@ -74,15 +90,34 @@
 
   &.waves-container__main {
     .waves-image {
-      margin-top: -100px;
+      height: 300px;
+      margin-top: -160px;
+    }
+
+    .img-dancers {
+      height: 150px;
+    }
+
+    .apply-btn-main {
+      width: 170px;
+      height: 170px;
+      border-radius: 85px;
+      border: 8px solid #3dd44b;
+      color: #fff;
+      background: #4ae658;
+      font-size: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
     }
   }
 }
 
 .sonat-navbar-brand {
-  width: 120px;
-  height: 120px;
-  border-radius: 60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
   background: #fff;
   position: absolute;
   padding: 10px;
@@ -101,7 +136,10 @@ h6 {
 }
 
 .navbar-nav-sonat li a {
-  font-size: 18px !important;
+  font-size: 20px !important;
   color: white !important;
+}
 
+.card-text {
+  font-size: 16px;
 }

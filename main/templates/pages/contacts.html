@@ -1,0 +1,56 @@
+{% extends 'base/base.html' %}
+{% load pages_tags ckeditor_placeholder static i18n %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="section-title">
+            <h3>{{ current_page.title }}</h3>
+        </div>
+        {% ckeditor_placeholder "content" with ckeditor:cms %}
+    </div>
+
+    <div id="leaflet-map"
+         style="width: 100%; height: {% placeholder "height" %}px;"></div>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet'/>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibG9nb3Zhc2VyIiwiYSI6ImNqanZmdmkzNjFoMzEzd21oampsaXJzcmoifQ.kZn8MzIH2ISGGAb44uGw3Q';
+        let map = new mapboxgl.Map({
+            container: 'leaflet-map',
+            style: 'mapbox://styles/mapbox/streets-v10',
+            center: [{% placeholder "long" %}, {% placeholder "latt" %}],
+            zoom: {% placeholder "zoom" %},
+        });
+
+        map.on("load", function () {
+            /* Image: An image is loaded and added to the map. */
+            map.loadImage("https://i.imgur.com/MK4NUzI.png", function (error, image) {
+                if (error) throw error;
+                map.addImage("custom-marker", image);
+                /* Style layer: A style layer ties together the source and image and specifies how they are displayed on the map. */
+                map.addLayer({
+                    id: "markers",
+                    type: "symbol",
+                    /* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
+                    source: {
+                        type: "geojson",
+                        data: {
+                            type: "FeatureCollection",
+                            features: [{
+                                "type": "Feature",
+                                "geometry": {"type": "Point", "coordinates": [30.664575853551497, 50.44829792713628]}
+                            }]
+                        }
+                    },
+                    layout: {
+                        "icon-image": "custom-marker",
+                    }
+                });
+            });
+        });
+        // Add zoom and rotation controls to the map.
+        map.addControl(new mapboxgl.NavigationControl());
+    </script>
+{% endblock %}

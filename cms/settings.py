@@ -138,6 +138,7 @@ PAGE_TEMPLATES = (
     ('pages/price.html', 'Ціна елемент'),
     ('pages/review.html', 'Відгук елемент'),
     ('pages/info.html', 'Інформація'),
+    ('pages/contacts.html', 'Контакти'),
 )
 
 CKEDITOR_CONFIGS = {

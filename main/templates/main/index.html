@@ -4,7 +4,12 @@
 {% block content %}
     {% get_page "landing" as CMS_landing %}
     {% get_page "reviews" as CMS_reviews %}
+    {% get_page "info" as info %}
 
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
 
     <header id="home" class="main-banner"
             style="background-image: url({% get_media_prefix %}{% show_content CMS_landing "main_image" %})">
@@ -15,11 +20,43 @@
     </header>
 
     <div class="waves-container waves-container__main">
-        <img class="waves-image waves-image" src="{% static 'base/images/waves_2.svg' %}">
-        <div class="waves-content"></div>
+        <img class="waves-image" src="{% static 'base/images/waves_2.svg' %}">
+        <div class="waves-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-auto">
+                        <img class="img-dancers" src="{% static 'base/images/dancers.png' %}">
+                    </div>
+                    <div class="col" style="padding-top: 40px; color: #633991; line-height: 1.1">
+                        <span style="font-size: 48px">Хореографічна</span>
+                        <br>
+                        <span style="font-size: 48px">школа</span>
+                        <span style="font-size: 36px">&nbsp;&nbsp;&nbsp;для дітей та юнацтва</span>
+                    </div>
+                    <div class="col-auto">
+                        <a href="{% show_content info "apply_url" %}" target="_blank"
+                           class="apply-btn-main" style="margin-top: 20px">{% trans 'Запис' %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="section light-bg" id="features">
+    <div class="section light-bg" id="features" style="padding: 170px">
+        <div class="container">
+            <div class="section-title">
+                <h3>{% trans 'Чому танці - це круто?' %}</h3>
+            </div>
+
+            <div class="your-class">
+                <div>your content</div>
+                <div>your content</div>
+                <div>your content</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section light-bg" id="features" style="padding: 170px">
         <div class="container">
             <div class="section-title">
                 <h3>{% trans 'Чому танці - це круто?' %}</h3>
@@ -105,5 +142,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $('.your-class').slick({});
+        });
+    </script>
 
 {% endblock %}

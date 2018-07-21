@@ -5,6 +5,7 @@
 {% get_page "schedule" as schedule %}
 {% get_page "contacts" as contacts %}
 {% get_page "faq" as faq %}
+{% get_page "for_parents" as for_parents %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +38,9 @@
                 <ul class="navbar-nav navbar-nav-sonat ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'main:index' %}">{% trans 'Головна' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% show_absolute_url for_parents %}">{% trans 'Батькам' %}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'main:pricing' %}">{% trans 'Ціни' %}</a>
