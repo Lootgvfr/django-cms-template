@@ -4,6 +4,7 @@
 
 {% block content %}
     {% get_page "prices" as prices %}
+    {% get_page "info" as info %}
     <div class="container">
         <div class="container">
             <div class="section-title">
@@ -20,7 +21,10 @@
                         </div>
                         <div class="px-4">{% show_content item "description" %}</div>
                         <div class="card-body">
-                            <a href="#" class="btn btn-primary btn-lg btn-block">{% trans 'Записатись' %}</a>
+                            <a href="{% show_content info "apply_url" %}" target="_blank"
+                               class="btn btn-primary btn-lg btn-block">
+                                {% trans 'Записатись' %}
+                            </a>
                         </div>
                     </div>
                 {% endfor %}

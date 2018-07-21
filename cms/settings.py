@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = '%&nmhq$5^i3a-1x3l@^m0v_62r+ukxcndk7rg+*2xn_!9_60#r'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -53,6 +51,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -80,7 +79,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'cms.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -91,13 +89,11 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -136,11 +132,12 @@ PAGE_LANGUAGES = LANGUAGES
 PAGE_DEFAULT_TEMPLATE = 'pages/base.html'
 
 PAGE_TEMPLATES = (
-    ('pages/landing.html', 'Landing page'),
-    ('pages/default.html', 'Default page'),
-    ('pages/news_item.html', 'News item'),
-    ('pages/price.html', 'Price item'),
-    ('pages/review.html', 'Review item'),
+    ('pages/landing.html', 'Головна сторінка'),
+    ('pages/default.html', 'За замовчуванням'),
+    ('pages/news_item.html', 'Новини елемент'),
+    ('pages/price.html', 'Ціна елемент'),
+    ('pages/review.html', 'Відгук елемент'),
+    ('pages/info.html', 'Інформація'),
 )
 
 CKEDITOR_CONFIGS = {
