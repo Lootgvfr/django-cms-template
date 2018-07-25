@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './css/themify-icons.css';
+import '../_lib/themify/themify-icons.css';
 import 'owl.carousel/dist/assets/owl.carousel.min.css';
-import './css/style.css';
-import './less/base.scss';
+import '../_lib/css/style.css';
+import './base.scss';

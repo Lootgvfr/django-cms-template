@@ -1,6 +1,9 @@
 {% extends 'base/base.html' %}
 {% load pages_tags ckeditor_placeholder static i18n %}
 
+{% block style %}
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet'/>
+{% endblock %}
 
 {% block content %}
     <div class="container">
@@ -12,9 +15,10 @@
 
     <div id="leaflet-map"
          style="width: 100%; height: {% placeholder "height" %}px;"></div>
+{% endblock %}
 
+{% block scripts %}
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet'/>
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoibG9nb3Zhc2VyIiwiYSI6ImNqanZmdmkzNjFoMzEzd21oampsaXJzcmoifQ.kZn8MzIH2ISGGAb44uGw3Q';
         let map = new mapboxgl.Map({

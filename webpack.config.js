@@ -10,6 +10,8 @@ const BundleTracker = require('webpack-bundle-tracker');
 const BUNDLES = {
     base: './main/static/base',
     baseStyle: './main/static/base/style',
+    main: './main/static/main',
+    mainStyle: './main/static/main/style',
     pricing: './main/static/pricing/base',
 };
 
@@ -42,7 +44,7 @@ module.exports = env => {
                     use: 'raw-loader',
                 },
                 {
-                    test: /\.(jpg|png|eot|svg|ttf|woff|woff2)$/,
+                    test: /\.(jpg|png|eot|svg|gif|ttf|woff|woff2)$/,
                     use: [{loader: 'file-loader', query: {name: '[name].[ext]'}}]
                 }
             ]

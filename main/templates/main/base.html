@@ -1,15 +1,15 @@
 {% extends 'base/base_landing.html' %}
-{% load static i18n pages_tags %}
+{% load static i18n pages_tags string_extras %}
+{% load render_bundle from webpack_loader %}
+
+{% block style %}
+    {% render_bundle 'mainStyle' %}
+{% endblock %}
 
 {% block content %}
     {% get_page "landing" as CMS_landing %}
     {% get_page "reviews" as CMS_reviews %}
     {% get_page "info" as info %}
-
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
 
     <header id="home" class="main-banner"
             style="background-image: url({% get_media_prefix %}{% show_content CMS_landing "main_image" %})">
@@ -20,12 +20,12 @@
     </header>
 
     <div class="waves-container waves-container__main">
-        <img class="waves-image" src="{% static 'base/images/waves_2.svg' %}">
+        <img class="waves-image" src="{% static 'main/images/waves_2.svg' %}">
         <div class="waves-content">
             <div class="container">
                 <div class="row">
                     <div class="col-auto">
-                        <img class="img-dancers" src="{% static 'base/images/dancers.png' %}">
+                        <img class="img-dancers" src="{% static 'main/images/dancers.png' %}">
                     </div>
                     <div class="col" style="padding-top: 40px; color: #633991; line-height: 1.1">
                         <span style="font-size: 48px">Хореографічна</span>
@@ -42,21 +42,16 @@
         </div>
     </div>
 
-    <div class="section light-bg" id="features" style="padding: 170px">
-        <div class="container">
-            <div class="section-title">
-                <h3>{% trans 'Чому танці - це круто?' %}</h3>
-            </div>
-
-            <div class="your-class">
-                <div>your content</div>
-                <div>your content</div>
-                <div>your content</div>
-            </div>
+    <div class="section light-bg" style="padding-top: 170px">
+        <div class="quick-gallery">
+            {% for i in "1234567890" %}
+                {% get_content CMS_landing "quick_gallery_"|addstr:forloop.counter as src %}
+                {% if src %}<img src="{% get_media_prefix %}{{ src }}">{% endif %}
+            {% endfor %}
         </div>
     </div>
 
-    <div class="section light-bg" id="features" style="padding: 170px">
+    <div class="section light-bg" id="features">
         <div class="container">
             <div class="section-title">
                 <h3>{% trans 'Чому танці - це круто?' %}</h3>
@@ -142,11 +137,8 @@
             </div>
         </div>
     </div>
+{% endblock %}
 
-    <script>
-        $(document).ready(function () {
-            $('.your-class').slick({});
-        });
-    </script>
-
+{% block scripts %}
+    {% render_bundle 'main' %}
 {% endblock %}
