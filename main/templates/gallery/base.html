@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans 'Школа танців' %}{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="gallery-container">
+            {% for img in gallery %}
+                <div class="gallery-item">
+                    <img src="{{ img }}">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

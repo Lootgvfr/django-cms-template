@@ -65,7 +65,64 @@ h6 {
   color: #633991;
 }
 
-.navbar-nav-sonat li a {
-  font-size: 20px !important;
-  color: white !important;
+.navbar-dark .navbar-nav .nav-link {
+  font-size: 20px;
+  color: #fff;
+}
+
+.nav-sub {
+  display: none;
+  position: absolute;
+  background: #FA2A8F;
+  border-radius: 3px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+
+  &:hover, &:active {
+    display: block;
+  }
+
+  .nav-link {
+    &:hover {
+      background: rgba(255, 255, 255, .2);
+    }
+
+    &:active {
+      background: rgba(255, 255, 255, .4);
+    }
+  }
+}
+
+.nav-link:hover + .nav-sub {
+  display: block;
+}
+
+.nav-language-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.language-switch {
+  display: flex;
+  border: 1px solid #fff;
+  border-radius: 3px;
+
+  a {
+    padding: 5px;
+    display: block;
+    color: #fff;
+
+    &:not(:last-child) {
+      border-right: 1px solid #fff;
+    }
+
+    &.active {
+      background: #fff;
+      color: #633991;
+    }
+  }
+}
+
+.footer-contacts {
+  background: #633991;
 }

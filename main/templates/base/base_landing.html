@@ -3,9 +3,12 @@
 
 {% get_page "landing" as CMS_landing %}
 {% get_page "schedule" as schedule %}
+{% get_page "gallery" as gallery %}
 {% get_page "contacts" as contacts %}
 {% get_page "faq" as faq %}
 {% get_page "for_parents" as for_parents %}
+
+{% get_current_language as LANGUAGE_CODE %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,22 +42,34 @@
                         <a class="nav-link" href="{% url 'main:index' %}">{% trans 'Головна' %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% show_absolute_url for_parents %}">{% trans 'Батькам' %}</a>
+                        <a class="nav-link" href="{% url 'main:news' %}">{% trans 'Новини' %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'main:pricing' %}">{% trans 'Ціни' %}</a>
+                        <a class="nav-link" href="javascript:void(0)">
+                            {% trans 'Батькам' %}
+                            <span class="ti-angle-down"></span>
+                        </a>
+                        <div class="nav-sub">
+                            <a class="nav-link"
+                               href="{% show_absolute_url for_parents %}">{% trans 'Загальна інформація' %}</a>
+                            <a class="nav-link" href="{% url 'main:pricing' %}">{% trans 'Ціни' %}</a>
+                            <a class="nav-link" href="{% show_absolute_url faq %}">{% trans 'Часті запитання' %}</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% show_absolute_url schedule %}">{% trans 'Розклад' %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'main:news' %}">{% trans 'Новини' %}</a>
+                        <a class="nav-link" href="{% show_absolute_url gallery %}">{% trans 'Галерея' %}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% show_absolute_url contacts %}">{% trans 'Контакти' %}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% show_absolute_url faq %}">{% trans 'Часті запитання' %}</a>
+                    <li class="nav-language-switch">
+                        <div class="language-switch">
+                            <a href="/uk" {% if LANGUAGE_CODE == 'uk' %}class="active"{% endif %}>УКР</a>
+                            <a href="/ru" {% if LANGUAGE_CODE == 'ru' %}class="active"{% endif %}>РУС</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -63,6 +78,10 @@
 </div>
 
 {% block content %}{% endblock %}
+
+<div class="footer-contacts">
+
+</div>
 
 <footer class="my-5 text-center">
     <p class="mb-2">

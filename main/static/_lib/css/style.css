@@ -207,7 +207,6 @@ p.lead {
     .navbar-expand-lg .navbar-nav .nav-link {
         padding-right: 1rem;
         padding-left: 1rem;
-        font-size: 14px;
     }
     .navbar-nav>.nav-item>.nav-link.active:after {
         content: "";
