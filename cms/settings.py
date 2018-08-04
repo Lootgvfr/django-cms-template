@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webpack_loader',
+    'rosetta',
 
     # django cms required apps
     'django.contrib.sites',
@@ -111,6 +112,10 @@ LANGUAGE_COOKIE_NAME = '_local_'
 LANGUAGES = (
     ('uk', u'Українська'),
     ('ru', u'Русский'),
+)
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
 )
 
 # Static files (CSS, JavaScript, Images)
