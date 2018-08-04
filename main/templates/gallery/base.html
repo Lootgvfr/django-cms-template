@@ -1,7 +1,12 @@
 {% extends 'base/base.html' %}
 {% load static i18n %}
+{% load render_bundle from webpack_loader %}
 
 {% block title %}{% trans 'Школа танців' %}{% endblock %}
+
+{% block style %}
+    {% render_bundle 'galleryStyle' %}
+{% endblock %}
 
 {% block content %}
     <div class="container-fluid">
@@ -11,6 +16,25 @@
                     <img src="{{ img }}">
                 </div>
             {% endfor %}
+            <div class="gallery-item">
+                <img src="{% static 'gallery/images/01.jpg' %}">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'gallery/images/02.png' %}">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'gallery/images/03.jpg' %}">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'gallery/images/04.jpg' %}">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'gallery/images/05.jpg' %}">
+            </div>
         </div>
     </div>
+{% endblock %}
+
+{% block scripts %}
+    {% render_bundle 'gallery' %}
 {% endblock %}

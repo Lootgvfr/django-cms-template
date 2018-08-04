@@ -2,6 +2,7 @@
 {% load render_bundle from webpack_loader %}
 
 {% get_page "landing" as CMS_landing %}
+{% get_page "info" as info %}
 {% get_page "schedule" as schedule %}
 {% get_page "contacts" as contacts %}
 {% get_page "faq" as faq %}
@@ -40,22 +41,41 @@
                         <a class="nav-link" href="{% url 'main:index' %}">{% trans 'Головна' %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% show_absolute_url for_parents %}">{% trans 'Батькам' %}</a>
+                        <a class="nav-link" href="{% url 'main:news' %}">{% trans 'Новини' %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'main:pricing' %}">{% trans 'Ціни' %}</a>
+                        <a class="nav-link" href="javascript:void(0)">
+                            {% trans 'Батькам' %}
+                            <span class="ti-angle-down"></span>
+                        </a>
+                        <div class="nav-sub">
+                            <a class="nav-link"
+                               href="{% show_absolute_url for_parents %}">{% trans 'Загальна інформація' %}</a>
+                            <a class="nav-link" href="{% url 'main:pricing' %}">{% trans 'Ціни' %}</a>
+                            <a class="nav-link" href="{% show_absolute_url faq %}">{% trans 'Часті запитання' %}</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% show_absolute_url schedule %}">{% trans 'Розклад' %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'main:news' %}">{% trans 'Новини' %}</a>
+                        <a class="nav-link" href="javascript:void(0)">
+                            {% trans 'Галерея' %}
+                            <span class="ti-angle-down"></span>
+                        </a>
+                        <div class="nav-sub">
+                            <a class="nav-link" href="{% url 'main:gallery' %}">{% trans 'Фото' %}</a>
+                            <a class="nav-link" href="{% url 'main:gallery_video' %}">{% trans 'Відео' %}</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% show_absolute_url contacts %}">{% trans 'Контакти' %}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% show_absolute_url faq %}">{% trans 'Часті запитання' %}</a>
+                    <li class="nav-language-switch">
+                        <div class="language-switch">
+                            <a href="/uk" {% if LANGUAGE_CODE == 'uk' %}class="active"{% endif %}>УКР</a>
+                            <a href="/ru" {% if LANGUAGE_CODE == 'ru' %}class="active"{% endif %}>РУС</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -65,6 +85,26 @@
 
 <div class="content-base">
     {% block content %}{% endblock %}
+</div>
+
+<div class="section light-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center text-lg-left">
+                <p class="mb-2">
+                    <span class="ti-location-pin mr-2"></span>
+                    {% trans 'м. Київ, район ДВРЗ, вул. Довбуша 18' %}
+                </p>
+                <div class="d-block d-sm-inline-block">
+                    <p class="mb-0">
+                        <span class="ti-headphone-alt mr-2"></span>
+                        <a href="tel:{% show_content info "telephone_short" %}">{% show_content info "telephone" %}</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
 
 <footer class="my-5 text-center">

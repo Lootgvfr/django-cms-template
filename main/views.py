@@ -16,3 +16,11 @@ class NewsView(TemplateView):
 
 class PricingView(TemplateView):
     template_name = 'pricing/base.html'
+
+
+class GalleryView(TemplateView):
+    template_name = 'gallery/base.html'
+
+
+class GalleryVideoView(TemplateView):
+    template_name = 'gallery/base_video.html'

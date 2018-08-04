@@ -12,6 +12,8 @@ const BUNDLES = {
     baseStyle: './main/static/base/style',
     main: './main/static/main',
     mainStyle: './main/static/main/style',
+    gallery: './main/static/gallery',
+    galleryStyle: './main/static/gallery/style',
     pricing: './main/static/pricing/base',
 };
 

@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+{% load static i18n %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}{% trans 'Школа танців' %}{% endblock %}
+
+{% block style %}
+    {% render_bundle 'galleryStyle' %}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="gallery-container">
+            {% for img in gallery %}
+                <div class="gallery-item gallery-item__video">
+
+                </div>
+            {% endfor %}
+            <div class="gallery-item gallery-item__video">
+                <iframe frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+                        src="https://www.youtube.com/embed/VNulQt96x4o?rel=0&amp;showinfo=0"></iframe>
+            </div>
+            <div class="gallery-item gallery-item__video">
+                <iframe frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+                        src="https://www.youtube.com/embed/VNulQt96x4o?rel=0&amp;showinfo=0"></iframe>
+            </div>
+            <div class="gallery-item gallery-item__video">
+                <iframe frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+                        src="https://www.youtube.com/embed/VNulQt96x4o?rel=0&amp;showinfo=0"></iframe>
+            </div>
+            <div class="gallery-item gallery-item__video">
+                <iframe frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+                        src="https://www.youtube.com/embed/VNulQt96x4o?rel=0&amp;showinfo=0"></iframe>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {% render_bundle 'gallery' %}
+{% endblock %}

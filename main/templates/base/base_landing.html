@@ -2,6 +2,7 @@
 {% load render_bundle from webpack_loader %}
 
 {% get_page "landing" as CMS_landing %}
+{% get_page "info" as info %}
 {% get_page "schedule" as schedule %}
 {% get_page "gallery" as gallery %}
 {% get_page "contacts" as contacts %}
@@ -60,7 +61,14 @@
                         <a class="nav-link" href="{% show_absolute_url schedule %}">{% trans 'Розклад' %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% show_absolute_url gallery %}">{% trans 'Галерея' %}</a>
+                        <a class="nav-link" href="javascript:void(0)">
+                            {% trans 'Галерея' %}
+                            <span class="ti-angle-down"></span>
+                        </a>
+                        <div class="nav-sub">
+                            <a class="nav-link" href="{% url 'main:gallery' %}">{% trans 'Фото' %}</a>
+                            <a class="nav-link" href="{% url 'main:gallery_video' %}">{% trans 'Відео' %}</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% show_absolute_url contacts %}">{% trans 'Контакти' %}</a>
@@ -79,21 +87,35 @@
 
 {% block content %}{% endblock %}
 
-<div class="footer-contacts">
-
-</div>
-
 <footer class="my-5 text-center">
-    <p class="mb-2">
-        <small>COPYRIGHT © 2017. ALL RIGHTS RESERVED. MOBAPP TEMPLATE BY <a href="https://colorlib.com">COLORLIB</a>
-        </small>
-    </p>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center text-lg-left">
+                <p class="mb-2">
+                    <span class="ti-location-pin mr-2"></span>
+                    {% trans 'м. Київ, район ДВРЗ, вул. Довбуша 18' %}
+                </p>
+                <div class="d-block d-sm-inline-block">
+                    <p class="mb-0">
+                        <span class="ti-headphone-alt mr-2"></span>
+                        <a href="tel:{% show_content info "telephone_short" %}">{% show_content info "telephone" %}</a>
+                    </p>
+                </div>
 
-    <small>
-        <a href="#" class="m-2">PRESS</a>
-        <a href="#" class="m-2">TERMS</a>
-        <a href="#" class="m-2">PRIVACY</a>
-    </small>
+            </div>
+        </div>
+
+        <p class="mb-2">
+            <small>COPYRIGHT © 2017. ALL RIGHTS RESERVED. MOBAPP TEMPLATE BY <a href="https://colorlib.com">COLORLIB</a>
+            </small>
+        </p>
+
+        <small>
+            <a href="#" class="m-2">PRESS</a>
+            <a href="#" class="m-2">TERMS</a>
+            <a href="#" class="m-2">PRIVACY</a>
+        </small>
+    </div>
 </footer>
 
 {% render_bundle 'base' %}

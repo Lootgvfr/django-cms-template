@@ -71,8 +71,9 @@ h6 {
 }
 
 .nav-sub {
-  display: none;
   position: absolute;
+  display: none;
+  min-width: 200px;
   background: #FA2A8F;
   border-radius: 3px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
@@ -121,8 +122,4 @@ h6 {
       color: #633991;
     }
   }
-}
-
-.footer-contacts {
-  background: #633991;
 }
