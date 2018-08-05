@@ -11,26 +11,11 @@
 {% block content %}
     <div class="container-fluid">
         <div class="gallery-container">
-            {% for img in gallery %}
+            {% for img in photos %}
                 <div class="gallery-item">
-                    <img src="{{ img }}">
+                    <img src="{{ img.image.url }}">
                 </div>
             {% endfor %}
-            <div class="gallery-item">
-                <img src="{% static 'gallery/images/01.jpg' %}">
-            </div>
-            <div class="gallery-item">
-                <img src="{% static 'gallery/images/02.png' %}">
-            </div>
-            <div class="gallery-item">
-                <img src="{% static 'gallery/images/03.jpg' %}">
-            </div>
-            <div class="gallery-item">
-                <img src="{% static 'gallery/images/04.jpg' %}">
-            </div>
-            <div class="gallery-item">
-                <img src="{% static 'gallery/images/05.jpg' %}">
-            </div>
         </div>
     </div>
 {% endblock %}

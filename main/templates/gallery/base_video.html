@@ -11,27 +11,12 @@
 {% block content %}
     <div class="container-fluid">
         <div class="gallery-container">
-            {% for img in gallery %}
+            {% for vid in videos %}
                 <div class="gallery-item gallery-item__video">
-
+                    <iframe frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+                            src="{{ vid.src }}"></iframe>
                 </div>
             {% endfor %}
-            <div class="gallery-item gallery-item__video">
-                <iframe frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-                        src="https://www.youtube.com/embed/VNulQt96x4o?rel=0&amp;showinfo=0"></iframe>
-            </div>
-            <div class="gallery-item gallery-item__video">
-                <iframe frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-                        src="https://www.youtube.com/embed/VNulQt96x4o?rel=0&amp;showinfo=0"></iframe>
-            </div>
-            <div class="gallery-item gallery-item__video">
-                <iframe frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-                        src="https://www.youtube.com/embed/VNulQt96x4o?rel=0&amp;showinfo=0"></iframe>
-            </div>
-            <div class="gallery-item gallery-item__video">
-                <iframe frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-                        src="https://www.youtube.com/embed/VNulQt96x4o?rel=0&amp;showinfo=0"></iframe>
-            </div>
         </div>
     </div>
 {% endblock %}

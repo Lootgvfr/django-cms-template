@@ -2,85 +2,84 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-05 08:51+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2018-08-05 12:41+0202\n"
+"Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.8.1\n"
 
 #: .\templates\base\base.html:15 .\templates\base\base_landing.html:18
 msgid "Школа танців - Sonat"
-msgstr ""
+msgstr "Школа танцев - Sonat"
 
 #: .\templates\base\base.html:41 .\templates\base\base_landing.html:43
 msgid "Головна"
-msgstr ""
+msgstr "Главная"
 
 #: .\templates\base\base.html:44 .\templates\base\base_landing.html:46
 msgid "Новини"
-msgstr ""
+msgstr "Новости"
 
 #: .\templates\base\base.html:48 .\templates\base\base_landing.html:50
 msgid "Батькам"
-msgstr ""
+msgstr "Родителям"
 
 #: .\templates\base\base.html:53 .\templates\base\base_landing.html:55
 msgid "Загальна інформація"
-msgstr ""
+msgstr "Общая информация"
 
 #: .\templates\base\base.html:54 .\templates\base\base_landing.html:56
 #: .\templates\pricing\base.html:11
 msgid "Ціни"
-msgstr ""
+msgstr "Цены"
 
 #: .\templates\base\base.html:55 .\templates\base\base_landing.html:57
 msgid "Часті запитання"
-msgstr ""
+msgstr "Частые вопросы"
 
 #: .\templates\base\base.html:59 .\templates\base\base_landing.html:61
 msgid "Розклад"
-msgstr ""
+msgstr "Расписание"
 
 #: .\templates\base\base.html:63 .\templates\base\base_landing.html:65
 msgid "Галерея"
-msgstr ""
+msgstr "Галлерея"
 
 #: .\templates\base\base.html:67 .\templates\base\base_landing.html:69
 msgid "Фото"
-msgstr ""
+msgstr "Фото"
 
 #: .\templates\base\base.html:68 .\templates\base\base_landing.html:70
 msgid "Відео"
-msgstr ""
+msgstr "Видео"
 
 #: .\templates\base\base.html:72 .\templates\base\base_landing.html:74
 msgid "Контакти"
-msgstr ""
+msgstr "Контакты"
 
 #: .\templates\base\base.html:96 .\templates\base\base_landing.html:104
 msgid "м. Київ, район ДВРЗ, вул. Довбуша 18"
-msgstr ""
+msgstr "г. Киев, район ДВРЗ, ул. Довбуша 18"
 
 #: .\templates\gallery\base.html:5 .\templates\gallery\base_video.html:5
 #: .\templates\news\base.html:4
 msgid "Школа танців"
-msgstr ""
+msgstr "Школа танцев"
 
 #: .\templates\main\base.html:38
 msgid "Запис"
-msgstr ""
+msgstr "Запись"
 
 #: .\templates\main\base.html:57
 msgid "Чому танці - це круто?"
