@@ -8,8 +8,7 @@
 {% get_page "contacts" as contacts %}
 {% get_page "faq" as faq %}
 {% get_page "for_parents" as for_parents %}
-
-{% get_current_language as LANGUAGE_CODE %}
+{% get_page "teachers" as teachers %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +24,6 @@
 
 <div class="waves-container">
     <img class="waves-image" src="{% static 'base/images/waves.svg' %}">
-    <div class="waves-logo"></div>
 </div>
 
 <div class="nav-menu fixed-top">
@@ -40,10 +38,10 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav navbar-nav-sonat ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'main:index' %}">{% trans 'Головна' %}</a>
+                        <a class="nav-link" href="{% url 'main:news' %}">{% trans 'Новини' %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'main:news' %}">{% trans 'Новини' %}</a>
+                        <a class="nav-link" href="{% show_absolute_url teachers %}">{% trans 'Викладачі' %}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)">
@@ -75,8 +73,16 @@
                     </li>
                     <li class="nav-language-switch">
                         <div class="language-switch">
-                            <a href="/uk" {% if LANGUAGE_CODE == 'uk' %}class="active"{% endif %}>УКР</a>
-                            <a href="/ru" {% if LANGUAGE_CODE == 'ru' %}class="active"{% endif %}>РУС</a>
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% for lang in LANGUAGES %}
+                                <form action="{% url 'set_language' %}" method="post">
+                                    {% csrf_token %}
+                                    <input name="language" type="hidden" value="{{ lang.0 }}"/>
+                                    <input type="submit" value="{{ lang.0 }}"
+                                           class="language-switch__button{% if LANGUAGE_CODE == lang.0 %} active{% endif %}"/>
+                                </form>
+                            {% endfor %}
                         </div>
                     </li>
                 </ul>
@@ -85,7 +91,7 @@
     </div>
 </div>
 
-{% block content %}{% endblock %}
+{% block base_content %}{% endblock %}
 
 <footer class="my-5 text-center">
     <div class="container">
@@ -117,21 +123,6 @@
         </small>
     </div>
 </footer>
-
-<form action="{% url 'set_language' %}" method="post">
-    {% csrf_token %}
-    <input name="next" type="hidden" value="{{ redirect_to }}" />
-    <select name="language">
-        {% get_current_language as LANGUAGE_CODE %}
-        {% get_available_languages as LANGUAGES %}
-        {% for lang in LANGUAGES %}
-            <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %} selected="selected"{% endif %}>
-                {{ lang.1 }} ({{ lang.0 }})
-            </option>
-        {% endfor %}
-    </select>
-    <input type="submit" value="Go" />
-</form>
 
 {% render_bundle 'base' %}
 {% block scripts %}{% endblock %}

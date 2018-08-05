@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-05 08:51+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: .\templates\base\base.html:15 .\templates\base\base_landing.html:18
+msgid "Школа танців - Sonat"
+msgstr ""
+
+#: .\templates\base\base.html:41 .\templates\base\base_landing.html:43
+msgid "Головна"
+msgstr ""
+
+#: .\templates\base\base.html:44 .\templates\base\base_landing.html:46
+msgid "Новини"
+msgstr ""
+
+#: .\templates\base\base.html:48 .\templates\base\base_landing.html:50
+msgid "Батькам"
+msgstr ""
+
+#: .\templates\base\base.html:53 .\templates\base\base_landing.html:55
+msgid "Загальна інформація"
+msgstr ""
+
+#: .\templates\base\base.html:54 .\templates\base\base_landing.html:56
+#: .\templates\pricing\base.html:11
+msgid "Ціни"
+msgstr ""
+
+#: .\templates\base\base.html:55 .\templates\base\base_landing.html:57
+msgid "Часті запитання"
+msgstr ""
+
+#: .\templates\base\base.html:59 .\templates\base\base_landing.html:61
+msgid "Розклад"
+msgstr ""
+
+#: .\templates\base\base.html:63 .\templates\base\base_landing.html:65
+msgid "Галерея"
+msgstr ""
+
+#: .\templates\base\base.html:67 .\templates\base\base_landing.html:69
+msgid "Фото"
+msgstr ""
+
+#: .\templates\base\base.html:68 .\templates\base\base_landing.html:70
+msgid "Відео"
+msgstr ""
+
+#: .\templates\base\base.html:72 .\templates\base\base_landing.html:74
+msgid "Контакти"
+msgstr ""
+
+#: .\templates\base\base.html:96 .\templates\base\base_landing.html:104
+msgid "м. Київ, район ДВРЗ, вул. Довбуша 18"
+msgstr ""
+
+#: .\templates\gallery\base.html:5 .\templates\gallery\base_video.html:5
+#: .\templates\news\base.html:4
+msgid "Школа танців"
+msgstr ""
+
+#: .\templates\main\base.html:38
+msgid "Запис"
+msgstr ""
+
+#: .\templates\main\base.html:57
+msgid "Чому танці - це круто?"
+msgstr ""
+
+#: .\templates\main\base.html:66
+msgid "Ємоційно"
+msgstr ""
+
+#: .\templates\main\base.html:68
+msgid ""
+"З давніх часів танець був найчутливішою формою вираження настрою, бажань, "
+"почуттів, або навіть слів."
+msgstr ""
+
+#: .\templates\main\base.html:81
+msgid "Зручно"
+msgstr ""
+
+#: .\templates\main\base.html:83
+msgid ""
+"Поки діти будуть робити важливі кроки до пізнання цього виду мистецтва, "
+"батьки зможуть зачекати їх, а заразом і відпочити у великому та зручному "
+"холі."
+msgstr ""
+
+#: .\templates\main\base.html:96
+msgid "Корисно"
+msgstr ""
+
+#: .\templates\main\base.html:98
+msgid "Танець не лише дає гарний настрій, а й розвиває та зміцнює тіло."
+msgstr ""
+
+#: .\templates\main\base.html:112
+msgid "Про нас"
+msgstr ""
+
+#: .\templates\main\base.html:128
+msgid "Відгуки"
+msgstr ""
+
+#: .\templates\pricing\base.html:26
+msgid "Записатись"
+msgstr ""
