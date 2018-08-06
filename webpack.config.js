@@ -102,8 +102,8 @@ module.exports = env => {
     const config = {
         entry: BUNDLES,
         output: {
-            path: path.join(__dirname, 'main/var/static'),
-            publicPath: '/static/',
+            path: path.join(__dirname, 'main/static/www'),
+            publicPath: '/static/www/',
             filename: `[name]${env.prod ? '-[hash]' : ''}.js`
         }
     };
