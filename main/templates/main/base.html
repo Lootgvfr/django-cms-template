@@ -14,24 +14,21 @@
     <header id="home" class="main-banner"
             style="background-image: url({% get_media_prefix %}{% show_content CMS_landing "main_image" %})">
         <div class="bg-absolute bg-gradient"></div>
-        <div class="main-banner-content">
-
-        </div>
     </header>
 
     <div class="waves-container waves-container__main">
         <img class="waves-image" src="{% static 'main/images/waves_2.svg' %}">
         <div class="waves-content">
             <div class="container">
-                <div class="row">
+                <div class="row flex-nowrap">
                     <div class="col-auto">
                         <img class="img-dancers" src="{% static 'main/images/dancers.png' %}">
                     </div>
-                    <div class="col" style="padding-top: 40px; color: #633991; line-height: 1.1">
-                        <span style="font-size: 48px">{% trans 'Хореографічна' %}</span>
+                    <div class="col main-text">
+                        <span>{% trans 'Хореографічна' %}</span>
                         <br>
-                        <span style="font-size: 48px">{% trans 'школа' %}</span>
-                        <span style="font-size: 36px">{% trans '&nbsp;&nbsp;&nbsp;для дітей та юнацтва' %}</span>
+                        <span>{% trans 'школа' %}</span>
+                        <span>{% trans 'для дітей та юнацтва' %}</span>
                     </div>
                     <div class="col-auto">
                         <a href="{% show_content info "apply_url" %}" target="_blank"

@@ -65,18 +65,44 @@ h6 {
   color: #633991;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-  font-size: 18px;
-  color: #fff;
+.navbar-dark {
+  .navbar-nav {
+    margin-left: auto;
+
+    @media (max-width: 991px) {
+      margin-right: auto;
+      max-width: 300px;
+    }
+
+    @media (min-width: 992px) {
+      margin-left: 200px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-link {
+      font-size: 18px;
+      color: #fff;
+    }
+  }
+}
+
+.navbar-dark .navbar-toggler {
+  margin-left: auto;
 }
 
 .nav-sub {
   position: absolute;
   display: none;
   min-width: 200px;
+  z-index: 1000;
   background: #fff;
   border-radius: 3px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+
+  @media (max-width: 991px) {
+    left: 40%;
+  }
 
   &:hover, &:active {
     display: block;

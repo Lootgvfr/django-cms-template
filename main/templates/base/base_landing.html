@@ -3,7 +3,6 @@
 
 {% get_page "landing" as CMS_landing %}
 {% get_page "info" as info %}
-{% get_page "schedule" as schedule %}
 {% get_page "gallery" as gallery %}
 {% get_page "contacts" as contacts %}
 {% get_page "faq" as faq %}
@@ -36,7 +35,7 @@
                     aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbar">
-                <ul class="navbar-nav navbar-nav-sonat ml-auto">
+                <ul class="navbar-nav navbar-nav-sonat">
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'main:news' %}">{% trans 'Новини' %}</a>
                     </li>
@@ -56,7 +55,8 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% show_absolute_url schedule %}">{% trans 'Розклад' %}</a>
+                        <a class="nav-link"
+                           href="{% show_content info "schedule_url" %}" target="_blank">{% trans 'Розклад' %}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)">
@@ -103,6 +103,8 @@
                 </p>
                 <div class="d-block d-sm-inline-block">
                     <p class="mb-0">
+                        <span class="ti-email mr-2"></span>
+                        <a class="mr-4" href="mailto:{% show_content info "email" %}">{% show_content info "email" %}</a>
                         <span class="ti-headphone-alt mr-2"></span>
                         <a href="tel:{% show_content info "telephone_short" %}">{% show_content info "telephone" %}</a>
                     </p>
