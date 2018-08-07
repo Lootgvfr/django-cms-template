@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% load pages_tags ckeditor_placeholder static i18n %}
+{% load render_bundle from webpack_loader %}
+
+
+{% block style %}
+    {% render_bundle 'teachersStyle' %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="section-title">
+            <h3>{{ current_page.title }}</h3>
+        </div>
+
+        <div class="teachers-container">
+            {% for item in current_page.published_children %}
+                <div class="teachers-item">
+                    <div class="teachers-item__image">
+                        <img class="teachers-item__image1" src="{% get_media_prefix %}{% show_content item "image_1" %}">
+                        <img class="teachers-item__image2" src="{% get_media_prefix %}{% show_content item "image_2" %}">
+                    </div>
+                    <div class="teachers-item__name">{{ item.title }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

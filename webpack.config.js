@@ -10,11 +10,12 @@ const BundleTracker = require('webpack-bundle-tracker');
 const BUNDLES = {
     base: './main/static/base',
     baseStyle: './main/static/base/style',
-    main: './main/static/main',
-    mainStyle: './main/static/main/style',
     gallery: './main/static/gallery',
     galleryStyle: './main/static/gallery/style',
+    main: './main/static/main',
+    mainStyle: './main/static/main/style',
     pricing: './main/static/pricing/base',
+    teachersStyle: './main/static/teachers/style',
 };
 
 module.exports = env => {

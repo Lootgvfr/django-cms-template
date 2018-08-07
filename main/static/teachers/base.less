@@ -1,0 +1,54 @@
+.teachers-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.teachers-item {
+  margin: 10px;
+  width: 300px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, .3);
+
+  &__image {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    background: #fff;
+  }
+
+  &__name {
+    padding: 10px;
+    flex: 1;
+    background: #633991;
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+  }
+
+  .teachers-item__image2 {
+    display: none;
+  }
+
+  &:hover {
+    .teachers-item__image1 {
+      display: none;
+    }
+
+    .teachers-item__image2 {
+      display: block;
+    }
+  }
+}

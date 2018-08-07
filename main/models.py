@@ -8,3 +8,6 @@ class PhotoItem(models.Model):
 class VideoItem(models.Model):
     src = models.CharField(max_length=500)
 
+
+class QuickPhotoItem(models.Model):
+    image = models.ImageField(upload_to='upload/')
