@@ -1,0 +1,49 @@
+version: "3.6"
+services:
+  nginx-ssl-proxy:
+    build:
+      context: ./etc/proxy
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      UPSTREAM: application:8080
+      SERVERNAME: sonatballet.kiev.ua
+    links:
+    - application:application
+    ports:
+    - "80:80"
+    - "443:443"
+    volumes:
+    - "/etc/letsencrypt"
+
+  application:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - "8080:8080"
+    links:
+      - database:postgres
+    depends_on:
+      - database
+    networks:
+    - dancing-school-network
+
+  database:
+    image: postgres
+    ports:
+    - "5432:5432"
+    environment:
+      POSTGRES_DB: "dancing-school"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "changeme"
+    networks:
+    - dancing-school-network
+
+networks:
+  dancing-school-network:
+    driver: bridge
+
+volumes:
+  dancing-school:
+    driver: local

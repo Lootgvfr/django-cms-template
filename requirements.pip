@@ -3,3 +3,4 @@ django-guardian
 django-webpack-loader==0.6.0
 django-page-cms[full]
 django-rosetta
+psycopg2
