@@ -19,7 +19,7 @@ COPY ./entrypoint.sh /application/entrypoint.sh
 COPY ./webpack-stats.json /application/webpack-stats.json
 COPY ./package.json /application/package.json
 COPY ./webpack.config.js /application/webpack.config.js
-COPY ./.env.example /application/.env
+COPY ./.env /application/.env
 RUN pip install -r /application/requirements.pip
 RUN chmod 777 -R /application/
 WORKDIR /application
