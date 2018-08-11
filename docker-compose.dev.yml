@@ -1,23 +1,5 @@
 version: "3.6"
 services:
-  nginx-ssl-proxy:
-    build:
-      context: ./etc/proxy
-      dockerfile: Dockerfile
-    restart: always
-    environment:
-      UPSTREAM: application:8080
-      SERVERNAME: sonatballet.kiev.ua
-    links:
-    - application:application
-    ports:
-    - "80:80"
-    - "443:443"
-    volumes:
-    - "/etc/letsencrypt"
-    networks:
-    - dancing-school-network
-
   application:
     build:
       dockerfile: Dockerfile
@@ -29,6 +11,8 @@ services:
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_HOST: ${DB_HOST}
+    ports:
+      - "8080:8080"
     links:
       - database:postgres
     depends_on:

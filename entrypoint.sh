@@ -9,6 +9,12 @@ waitForDatabase() {
 }
 
 waitForDatabase
+echo "Install node modules"
+cd /application && npm install
+
+echo "Webpack build.."
+cd /application && npm run webpack-local
+
 echo "Apply database migrations"
 python /application/manage.py migrate
 

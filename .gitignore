@@ -36,3 +36,4 @@ node_modules
 */var/static
 */static/www
 webpack-stats.json
+.env
